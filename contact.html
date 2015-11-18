@@ -58,9 +58,9 @@
                     <h2 class="panel-title">Contact Form</h2>
                 </div>
 
-        <section class="card register" ng-app>
+        <section class="card register" ng-app="contactFormApp" ng-controller="mainController">
 
-        <form role="form" novalidate name="contactform">
+        <form role="form" novalidate name="contactform" ng-submit="submitForm()">
 
             <div class="textintro">
                <p>Please fill out the following form</p>
@@ -142,6 +142,6 @@
     </ul>
     </div>
 </div>
-<script type="text/javascript" src="js/contactForm.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
 </body>
 </html>

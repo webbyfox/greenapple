@@ -1,13 +1,15 @@
-var myApp = angular.module("contactApp", []);
+var myApp = angular.module("contactFormApp", []);
 
-myApp.controller('MainCtrl', ['$scope', '$http',function myController($scope, $http) {
+
+
+myApp.controller('mainController', ['$scope', '$http',function ($scope, $http) {
   $scope.formData = {};
-  $scope.processForm = function() {
-    alert('valid form!')
+  $scope.submitForm = function() {
+    console.log($scope.contact.fullname)
     $http({
       method  : 'POST',
       url     : 'process.php',
-      data    : $scope.formData,
+      data    : $.param($scope.contact),
       headers : { 'Content-Type': 'application/x-www-form-urlencoded' }
     });
   };
